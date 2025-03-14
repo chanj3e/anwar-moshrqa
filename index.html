@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مؤسسة أنوار مشرقة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      :root {
+        --primary-color: #4169e1; /* Blue from your logo */
+        --secondary-color: #ff6b35; /* Orange from your logo */
+        --light-color: #f8f9fa;
+        --dark-color: #222;
+        --grey-color: #eee;
+        --white-color: #fff;
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Cairo", sans-serif;
+        line-height: 1.6;
+        color: var(--dark-color);
+        background-color: var(--light-color);
+        overflow-x: hidden;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--primary-color);
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header */
+      header {
+        background-color: var(--white-color);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        height: 50px;
+      }
+
+      .menu-toggle {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      nav ul {
+        display: flex;
+      }
+
+      nav ul li {
+        margin-right: 20px;
+      }
+
+      nav ul li:last-child {
+        margin-right: 0;
+      }
+
+      nav ul li a {
+        color: var(--dark-color);
+        font-weight: 600;
+        transition: var(--transition);
+        padding: 10px 10px;
+        display: block;
+        position: relative;
+      }
+
+      nav ul li a:hover {
+        color: var(--primary-color);
+      }
+
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary-color);
+        transition: var(--transition);
+      }
+
+      nav ul li a:hover::after {
+        width: 100%;
+        right: auto;
+        left: 0;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--primary-color) 70%,
+          var(--secondary-color)
+        );
+        color: var(--white-color);
+        padding: 150px 0 100px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        left: -50px;
+        width: 200px;
+        height: 200px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        z-index: 1;
+        animation: float 15s infinite ease-in-out;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: -100px;
+        right: -100px;
+        width: 300px;
+        height: 300px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        z-index: 1;
+        animation: float 20s infinite ease-in-out reverse;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(30px, 30px);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        font-weight: 800;
+      }
+
+      .hero p {
+        font-size: 18px;
+        max-width: 700px;
+        margin: 0 auto 30px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: var(--secondary-color);
+        color: var(--white-color);
+        border-radius: 30px;
+        font-weight: 600;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        border: 2px solid var(--white-color);
+        margin-right: 15px;
+      }
+
+      .btn-outline:hover {
+        background-color: var(--white-color);
+        color: var(--primary-color);
+      }
+
+      /* Services Section */
+      .services {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 36px;
+        color: var(--primary-color);
+        position: relative;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--secondary-color);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .service-card {
+        background-color: var(--white-color);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: var(--transition);
+        transform: translateY(0);
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .service-icon {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        font-size: 40px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+      }
+
+      .service-card:hover .service-icon {
+        background-color: var(--secondary-color);
+      }
+
+      .service-content {
+        padding: 30px;
+      }
+
+      .service-content h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        color: var(--primary-color);
+      }
+
+      /* About Section */
+      .about {
+        padding: 80px 0;
+        background-color: var(--grey-color);
+      }
+
+      .about-content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .about-img {
+        flex: 1;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .about-text {
+        flex: 1;
+      }
+
+      .about-text h2 {
+        font-size: 36px;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+      }
+
+      .about-text p {
+        margin-bottom: 20px;
+      }
+
+      .about-features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-top: 30px;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+      }
+
+      .feature-icon {
+        color: var(--secondary-color);
+        font-size: 20px;
+        margin-left: 10px;
+      }
+
+      /* Projects Section */
+      .projects {
+        padding: 80px 0;
+      }
+
+      .projects-filter {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+
+      .filter-btn {
+        padding: 8px 20px;
+        background-color: transparent;
+        border: 1px solid var(--primary-color);
+        color: var(--primary-color);
+        border-radius: 30px;
+        cursor: pointer;
+        margin: 0 5px;
+        transition: var(--transition);
+      }
+
+      .filter-btn.active,
+      .filter-btn:hover {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .project-card {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-img {
+        height: 250px;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(65, 105, 225, 0.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: var(--transition);
+      }
+
+      .project-card:hover .project-overlay {
+        opacity: 1;
+      }
+
+      .project-overlay h3 {
+        color: var(--white-color);
+        font-size: 24px;
+        margin-bottom: 10px;
+        transform: translateY(20px);
+        transition: var(--transition);
+        opacity: 0;
+      }
+
+      .project-overlay p {
+        color: var(--white-color);
+        transform: translateY(20px);
+        transition: var(--transition);
+        opacity: 0;
+        text-align: center;
+        padding: 0 20px;
+      }
+
+      .project-card:hover .project-overlay h3,
+      .project-card:hover .project-overlay p {
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay: 0.1s;
+      }
+
+      .project-card:hover .project-overlay p {
+        transition-delay: 0.2s;
+      }
+
+      /* Testimonials Section */
+      .testimonials {
+        padding: 80px 0;
+        background-color: var(--grey-color);
+      }
+
+      .testimonials-slider {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .testimonial-item {
+        background-color: var(--white-color);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin: 20px;
+      }
+
+      .testimonial-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        object-fit: cover;
+        border: 3px solid var(--primary-color);
+      }
+
+      .testimonial-text {
+        font-style: italic;
+        margin-bottom: 20px;
+      }
+
+      .testimonial-author {
+        font-weight: 700;
+        color: var(--primary-color);
+      }
+
+      .testimonial-position {
+        font-size: 14px;
+        color: #777;
+      }
+
+      .slider-controls {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+      }
+
+      .slider-btn {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .slider-btn:hover {
+        background-color: var(--secondary-color);
+      }
+
+      /* Contact Section */
+      .contact {
+        padding: 80px 0;
+      }
+
+      .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 50px;
+      }
+
+      .contact-info {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        padding: 30px;
+        border-radius: 10px;
+      }
+
+      .contact-info h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .contact-info-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .contact-info-icon {
+        font-size: 24px;
+        margin-left: 15px;
+      }
+
+      .contact-form {
+        background-color: var(--white-color);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-family: "Cairo", sans-serif;
+        transition: var(--transition);
+      }
+
+      .form-control:focus {
+        border-color: var(--primary-color);
+        outline: none;
+        box-shadow: 0 0 5px rgba(65, 105, 225, 0.3);
+      }
+
+      textarea.form-control {
+        height: 150px;
+        resize: none;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark-color);
+        color: var(--white-color);
+        padding: 50px 0 0;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+      }
+
+      .footer-column h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-column h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 50px;
+        height: 2px;
+        background-color: var(--secondary-color);
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: #bbb;
+        transition: var(--transition);
+      }
+
+      .footer-links a:hover {
+        color: var(--white-color);
+        padding-right: 5px;
+      }
+
+      .social-links {
+        display: flex;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--white-color);
+        border-radius: 50%;
+        margin-left: 10px;
+        transition: var(--transition);
+      }
+
+      .social-links a:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      /* Animations */
+      .fade-in {
+        animation: fadeIn 1s ease forwards;
+      }
+
+      .slide-up {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s ease;
+      }
+
+      .slide-up.appear {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .about-content {
+          flex-direction: column;
+        }
+
+        .about-img,
+        .about-text {
+          flex: none;
+          width: 100%;
+        }
+
+        .contact-content {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+        }
+
+        nav {
+          position: fixed;
+          top: 80px;
+          right: -300px;
+          width: 250px;
+          height: calc(100vh - 80px);
+          background-color: var(--white-color);
+          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+          transition: var(--transition);
+          z-index: 1000;
+        }
+
+        nav.active {
+          right: 0;
+        }
+
+        nav ul {
+          flex-direction: column;
+          padding: 20px;
+        }
+
+        nav ul li {
+          margin-right: 0;
+          margin-bottom: 15px;
+        }
+
+        .hero h1 {
+          font-size: 36px;
+        }
+
+        .section-title h2 {
+          font-size: 28px;
+        }
+
+        .about-features {
+          grid-template-columns: 1fr;
+        }
+
+        .projects-filter {
+          flex-wrap: wrap;
+        }
+
+        .filter-btn {
+          margin-bottom: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <img src="./imgs/انوار مشرقة.png" alt="أنوار مشرقة" />
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#services">خدماتنا</a></li>
+            <!-- <li><a href="#about">مشاريعنا </a></li> -->
+            <!-- <li><a href="#projects">مشاريعنا</a></li> -->
+            <li><a href="#testimonials">آراء العملاء </a></li>
+            <li><a href="#contact">تواصل معنا</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container hero-content">
+        <h1 class="animate__animated animate__fadeInDown">مؤسسة أنوار مشرقة</h1>
+        <p class="animate__animated animate__fadeIn animate__delay-1s">
+          نوفر لك دولابًا فريدًا يجمع بين الجودة العالية والتصميم الأنيق لتلبية
+          احتياجاتك بكل احترافية
+        </p>
+        <div class="animate__animated animate__fadeInUp animate__delay-1s">
+          <a href="#services" class="btn btn-outline">خدماتنا</a>
+          <a href="#contact" class="btn">تواصل معنا</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="services" class="services">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-img slide-up">
+            <img
+              src="./imgs/IMG-20241201-WA0043-1536x1152.jpg"
+              alt="عن الشركة"
+            />
+          </div>
+          <div class="about-text slide-up">
+            <h2>لمسة عصرية وعملية لدولابك المثالي</h2>
+            <p>
+              تصميم مبتكر يجمع بين الأناقة والوظائف العملية لتلبية كل احتياجاتك
+              اليومية
+            </p>
+
+            <div class="about-features">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <div>فريق متخصص</div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <div>خبرة أكثر من 10 سنوات</div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <div>تقنيات حديثة</div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <div>دعم فني مستمر</div>
+              </div>
+            </div>
+            <a href="#contact" class="btn" style="margin-top: 20px"
+              >تواصل معنا</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="services" class="services">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-img slide-up">
+            <img
+              src="./imgs/IMG-20241201-WA0043-1536x1152.jpg"
+              alt="عن الشركة"
+            />
+          </div>
+          <div class="about-text slide-up">
+            <h2>دولاب الخلود - تصميم يليق بك</h2>
+            <p>
+              احصل على دولاب يجمع بين الأناقة والعملية، مصنوع بأعلى معايير
+              الجودة ليلبي جميع احتياجاتك اليومية
+            </p>
+
+            <div class="about-features">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <div>فريق متخصص</div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <div>خبرة أكثر من 10 سنوات</div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <div>تقنيات حديثة</div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <div>دعم فني مستمر</div>
+              </div>
+            </div>
+            <a href="#contact" class="btn" style="margin-top: 20px"
+              >تواصل معنا</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+        <div class="section-title">
+          <h2>آراء العملاء</h2>
+          <p>ما يقوله عملاؤنا عن خدماتنا وتجربتهم معنا</p>
+        </div>
+        <div class="testimonials-slider">
+          <div class="testimonial-item slide-up" id="testimonial1">
+            <img
+              src="./imgs/3d-render-customer-leave-feedback-phone-screen.jpg"
+              alt="عميل 1"
+              class="testimonial-img"
+            />
+            <div class="testimonial-text">
+              "الدولاب ما شاء الله عملي جدًا وتصميمه يناسب كل الغرف، أخذته وما
+              ندمت، جودته ممتازة والسعر معقول"
+            </div>
+            <div class="testimonial-author">محمد العتيبي</div>
+            <div class="testimonial-position">...</div>
+          </div>
+          <div
+            class="testimonial-item slide-up"
+            id="testimonial2"
+            style="display: none"
+          >
+            <img
+              src="./imgs/3d-render-customer-leave-feedback-phone-screen.jpg"
+              alt="عميل 2"
+              class="testimonial-img"
+            />
+            <div class="testimonial-text">
+              "الدولاب مره جميل وواسع، يساعدني أرتب أغراضي بسهولة، وأهم شي إنه
+              متين وشكله يضيف لمسة حلوة لغرفتي"
+            </div>
+            <div class="testimonial-author">سارة محمد</div>
+            <div class="testimonial-position">...</div>
+          </div>
+          <div
+            class="testimonial-item slide-up"
+            id="testimonial3"
+            style="display: none"
+          >
+            <img
+              src="./imgs/3d-render-customer-leave-feedback-phone-screen.jpg"
+              alt="عميل 3"
+              class="testimonial-img"
+            />
+            <div class="testimonial-text">
+              "الدولاب مره جميل وواسع، يساعدني أرتب أغراضي بسهولة، وأهم شي إنه
+              متين وشكله يضيف لمسة حلوة لغرفتي"
+            </div>
+            <div class="testimonial-author">نورة الحربي</div>
+            <div class="testimonial-position">...</div>
+          </div>
+          <div class="slider-controls">
+            <div class="slider-btn prev-btn">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+            <div class="slider-btn next-btn">
+              <i class="fas fa-arrow-left"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>تواصل معنا</h2>
+          <p>نحن هنا للإجابة على جميع استفساراتك وتقديم المساعدة</p>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info slide-up">
+            <h3>معلومات التواصل</h3>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <p>المملكة العربية السعودية، الرياض</p>
+                <p>طريق الملك فهد، برج الأنوار، الطابق 15</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div>
+                <a href="tel:+966556652436" style="color: white">
+                  <span class="elementor-icon-list-text">0556654433</span>
+                </a>
+                <br />
+                <a href="tel:+966556652436" style="color: white">
+                  <span class="elementor-icon-list-text">0556654433</span>
+                </a>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <a href="mailto:amr798393@gmail.com" style="color: white">
+                  <span class="elementor-icon-list-text">Omar@gmail.com</span>
+                </a>
+                <br />
+                <a href="mailto:amr798393@gmail.com" style="color: white">
+                  <span class="elementor-icon-list-text">Omar@gmail.com</span>
+                </a>
+              </div>
+            </div>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/profile.php?id=61573637570956"
+                target="_blank"
+              >
+                <i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.tiktok.com/@anwarmoshreka" target="_blank">
+                <i class="fab fa-tiktok"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/anwar_moshreka/"
+                target="_blank"
+              >
+                <i class="fab fa-instagram"></i
+              ></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+          <div class="contact-form slide-up">
+            <form id="contactForm">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="الاسم الكامل"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="البريد الإلكتروني"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="tel"
+                  class="form-control"
+                  placeholder="رقم الهاتف"
+                />
+              </div>
+
+              <div class="form-group">
+                <textarea
+                  class="form-control"
+                  placeholder="رسالتك"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn">إرسال الرسالة</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>مؤسسة أنوار مشرقة</h3>
+            <p>
+              نوفر لك دولابًا فريدًا يجمع بين الجودة العالية والتصميم الأنيق
+              لتلبية احتياجاتك بكل احترافية
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/profile.php?id=61573637570956"
+                target="_blank"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.tiktok.com/@anwarmoshreka" target="_blank">
+                <i class="fab fa-tiktok"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/anwar_moshreka/"
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>روابط مهمة</h3>
+            <ul class="footer-links">
+              <li><a href="#home">الرئيسية</a></li>
+              <li><a href="#services">خدماتنا</a></li>
+              <!-- <li><a href="#about">من نحن</a></li> -->
+              <!-- <li><a href="#projects">مشاريعنا</a></li> -->
+              <li><a href="#testimonials">آراء العملاء</a></li>
+              <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 مؤسسة أنوار مشرقة جميع الحقوق محفوظة.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      // Menu Toggle
+      const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector("nav");
+
+      menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+
+      // Smooth Scrolling
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          nav.classList.remove("active");
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // Scroll Animation
+      const slideUpElements = document.querySelectorAll(".slide-up");
+
+      function checkSlide() {
+        slideUpElements.forEach((element) => {
+          const slideInAt =
+            window.scrollY + window.innerHeight - element.offsetHeight / 2;
+          const elementBottom = element.offsetTop + element.offsetHeight;
+          const isHalfShown = slideInAt > element.offsetTop;
+          const isNotScrolledPast = window.scrollY < elementBottom;
+
+          if (isHalfShown && isNotScrolledPast) {
+            element.classList.add("appear");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", checkSlide);
+      window.addEventListener("load", checkSlide);
+
+      // Projects Filter
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const projectCards = document.querySelectorAll(".project-card");
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Remove active class from all buttons
+          filterBtns.forEach((btn) => btn.classList.remove("active"));
+          // Add active class to clicked button
+          btn.classList.add("active");
+
+          const filter = btn.getAttribute("data-filter");
+
+          projectCards.forEach((card) => {
+            if (
+              filter === "all" ||
+              card.getAttribute("data-category") === filter
+            ) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // Testimonials Slider
+      const testimonials = document.querySelectorAll(".testimonial-item");
+      const nextBtn = document.querySelector(".next-btn");
+      const prevBtn = document.querySelector(".prev-btn");
+      let currentTestimonial = 0;
+
+      function showTestimonial(index) {
+        testimonials.forEach(
+          (testimonial) => (testimonial.style.display = "none")
+        );
+        testimonials[index].style.display = "block";
+      }
+
+      nextBtn.addEventListener("click", () => {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        showTestimonial(currentTestimonial);
+      });
+
+      prevBtn.addEventListener("click", () => {
+        currentTestimonial =
+          (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+        showTestimonial(currentTestimonial);
+      });
+
+      // Form Validation
+      const contactForm = document.getElementById("contactForm");
+
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("تم إرسال رسالتك بنجاح، سنتواصل معك قريبًا!");
+        contactForm.reset();
+      });
+
+      // Newsletter Form
+      const newsletterForm = document.querySelector(".newsletter-form");
+
+      newsletterForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("شكراً لاشتراكك في نشرتنا البريدية!");
+        newsletterForm.reset();
+      });
+
+      // Preloader
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          document.body.classList.add("loaded");
+        }, 1000);
+      });
+
+      // Additional animations
+      window.addEventListener("scroll", function () {
+        const scrollPos = window.scrollY;
+
+        // Parallax effect for hero section
+        const hero = document.querySelector(".hero");
+        if (scrollPos < 600) {
+          hero.style.backgroundPositionY = scrollPos * 0.5 + "px";
+        }
+
+        // Counters animation when in view
+        const counterSection = document.querySelector("#about");
+        if (scrollPos > counterSection.offsetTop - window.innerHeight / 1.5) {
+          startCounters();
+        }
+      });
+
+      // Function to animate numbers
+      let counted = false;
+      function startCounters() {
+        if (counted) return;
+        counted = true;
+      }
+
+      // Add active class to current nav item based on scroll position
+      window.addEventListener("scroll", function () {
+        const sections = document.querySelectorAll("section");
+        const navItems = document.querySelectorAll("nav ul li");
+
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+
+          if (window.scrollY >= sectionTop - 200) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navItems.forEach((item) => {
+          item.classList.remove("active");
+          if (item.querySelector("a").getAttribute("href") === "#" + current) {
+            item.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
